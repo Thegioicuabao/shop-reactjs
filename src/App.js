@@ -9,22 +9,21 @@ import {
   Link
 } from "react-router-dom";
 import Products from './pages/products'
-
+import { CartProvider } from './contexts/cart'
 function App() {
   return (
-    <Router>
-      <div className="App">
-       <Topmenu/>
-      </div>
-      <Switch>
-        {/* <Route path="/">
-          <Home />
-        </Route> */}
-        <Route path="/products">
-          <Products />
-        </Route>
-      </Switch>
-    </Router>
+    <CartProvider>
+      <Router>
+        <div className="App">
+        <Topmenu/>
+        </div>
+        <Switch>
+          <Route path="/products">
+            <Products />
+          </Route>
+        </Switch>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -9,11 +9,11 @@ export class CartProvider extends Component {
     this.state = {
       cartItems: []
     }
-    
-    this.addToCart.bind(this)
+    this.addToCart = this.addToCart.bind(this);
   }
 
   addToCart(product) {
+    console.log(product);
     this.setState({
       cartItems: this.state.cartItems.concat(product)
     })

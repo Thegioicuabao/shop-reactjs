@@ -10,6 +10,7 @@ import {
 } from 'reactstrap';
 
 import {Link} from "react-router-dom";
+import { CartContext } from '../contexts/cart'
 
 const Topmenu = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +36,13 @@ const Topmenu = (props) => {
             </NavItem>
             <NavItem>
               <NavLink>
-                <Link to="/products">Cart (0)</Link>
+               <CartContext.Consumer>
+                 { ({ cartItems }) => (
+                   <Link to="/products">Cart ({cartItems.length})</Link>
+                 )
+                 }
+               </CartContext.Consumer>
+                
              </NavLink>
             </NavItem>
           </Nav>
