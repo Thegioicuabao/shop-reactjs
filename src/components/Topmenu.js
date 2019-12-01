@@ -24,13 +24,18 @@ const Topmenu = (props) => {
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-             <NavLink>
-              <Link to="/">Home</Link>
+              <NavLink>
+                <Link to="/">Home</Link>
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink>
+                <Link to="/products">Products</Link>
              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink>
-              <Link to="/products">Products</Link>
+                <Link to="/products">Cart (0)</Link>
              </NavLink>
             </NavItem>
           </Nav>
